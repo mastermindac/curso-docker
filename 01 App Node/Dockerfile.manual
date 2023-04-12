@@ -1,0 +1,20 @@
+FROM ubuntu:22.04
+
+RUN apt update \
+    && apt install -y curl \
+    && curl -fsSL https://deb.nodesource.com/setup_18.x | bash - \
+    && apt-get install -y nodejs
+
+WORKDIR /app
+COPY index.js ./
+
+EXPOSE 3000
+
+# Shell Form
+CMD node index.js
+
+# Exec Form
+# CMD [ "node", "index.js", "$HOME" ]
+
+# ENTRYPOINT ["ls"]
+# CMD ["-l"]

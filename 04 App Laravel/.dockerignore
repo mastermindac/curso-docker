@@ -1,0 +1,4 @@
+vendor
+Dockerfile
+.dockerignore
+.gitinore
